@@ -8,8 +8,6 @@ function Mostar()
 	nombre=document.getElementById('elNombre').value;
 	edad=document.getElementById('laEdad').value;
 
-	alert("Usted se llama " + nombre+ " y tiene " + edad+ " años")
-
-
+	alert("usted se llama " + nombre + "y tiene " + edad + "años")
 }
 
