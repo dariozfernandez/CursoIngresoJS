@@ -1,34 +1,83 @@
 function Mostrar()
 {
 
-	var contador=0;
-	var positivo=0;
-	var negativo=1;
+	var contador = 0;
+	var contadorNegativos = 0;
+	var contadorPositivos = 0;
+	var cantidadDeCeros = 0;
+	var cantidadDePares = 0;
+	var acumuladorPositivos = 0;
+	var promedioPositivos = 0;
+	var acumuladorNegativos = 0;
+	var promedioNegativos = 0;
+	var diferenciaEntrePositivosyNegativos = 0;
+	//declarar contadores y variables 
 	
-	var respuesta='si';
+	var respuesta='s';
 
-	while(resuesta== "si")
+	while(respuesta=='s')
 	{
-		numero=prompt();
-		numero=parseint(numero);
-		while(isNaN(num))
-		{
-			numero=prompt();
-			numero=parseint(numero);
+		//contador++;
+		numero = prompt("ingrese Numero");
+		numero = parseInt(numero);
+		//alert(numero)
+			numero = prompt("Por favor ingrese Numero");
+			numero = parseInt(numero);
 		}
 
-		if(numero>0)
-		{
-			positivo+=numero;
-		}
-		else if (num<0)
-		{
-			negativo*=numero;
-		}
-		resuesta=prompt();
+
+			if (numero==0)
+			{
+				cantidadDeCeros++;
+			}
+			else
+			{					
+				if(numero>0)
+				{	//es positivo
+					contadorPositivos++;
+					acumuladorPositivos+=numero;
+				}
+				else
+				{	//es negativo
+					contadorNegativos++;
+					acumuladorNegativos+=numero;	
+				}	
+				// como sabemos que num!=0
+				if(numero%2==0) // preguntamos si es par
+				{
+					cantidadDePares++;
+				}	
+			}
+		
+
+		respuesta=prompt("Para continuar, s");
 	}
 
-document.getElementById('suma').value=positivo;
-document.getElementById('producto').value=negativo;
+	document.write("<br>1 Suma de los Numeros negativos: " + acumuladorNegativos);
+	document.write("<br>2 Suma de los Numeros Positivos: " + acumuladorPositivos);
+	document.write("<br>3 cantidad Numeros positivos: " + contadorPositivos);
+	document.write("<br>4 cantidad de los Numeros negativos: " + contadorNegativos);
+	document.write("<br>5 cantidad de Ceros: " + cantidadDeCeros);
+	document.write("<br>6 cantidad de numeros pares; " + cantidadDePares);
+
+	if(contadorPositivos>0)
+	{
+		document.write("<br>7 Promedio de Positivos; " + acumuladorPositivos/contadorPositivos);
+	}
+	else
+	{
+		document.write("<br>7 Promedio de Positivos: NO se ingresaron Num Positivos ");
+	}
+
+	if(contadorNegativos>0)
+	{
+		document.write("<br>7 Promedio de negativos; " + acumuladorNegativos/contadorNegativos);
+	}
+	else
+	{
+		document.write("<br>8 Promedio de Negativos: NO se ingresaron Num Negativos ");
+	}
+
+	document.write("<br>9 Diferencia de Positivos - negativos; " + (acumuladorPositivos - acumuladorNegativos));
 
 }//FIN DE LA FUNCIÓN
