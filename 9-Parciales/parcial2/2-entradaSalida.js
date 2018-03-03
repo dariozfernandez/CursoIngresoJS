@@ -12,9 +12,9 @@ function Mostrar()
   importe= prompt("ingrese el importe");
   importe= parseInt(importe);
 
-  importeFinal= importe + (importe * 21 / 100);
+  importeFinal= importe + (importe * 0.21 );
 
-  alert("su importe final es " + importeFinal);
+  document.getElementById('importe').value = importeFinal;
 	
 }
 
